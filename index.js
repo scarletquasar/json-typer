@@ -27,20 +27,17 @@ const typer = (json) => {
 }
 
 const typeGen = (typeName, typeObject) => {
-    const values = [
-        "number",
-        "string",
-        "boolean",
-        "any"
-    ];
-
     const typeBase = `type ${typeName} = `;
     let typeBody = JSON.stringify(typeObject).replaceAll("\"", "")
 
     return typeBase + typeBody;
 }
 
-const jsonTyper = (typeName, json) => {
+const interfaceGen = (interfaceName, typeObject) => {
+    const interfaceBase = `interface ${interfaceName} `
+}
+
+const jsonToType = (typeName, json) => {
     return typeGen(typeName, typer(json));
 }
 
