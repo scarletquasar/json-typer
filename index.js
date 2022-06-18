@@ -28,18 +28,25 @@ const typer = (json) => {
 
 const typeGen = (typeName, typeObject) => {
     const typeBase = `type ${typeName} = `;
-    let typeBody = JSON.stringify(typeObject).replaceAll("\"", "")
+    let typeBody = JSON.stringify(typeObject).replaceAll("\"", "");
 
     return typeBase + typeBody;
 }
 
 const interfaceGen = (interfaceName, typeObject) => {
-    const interfaceBase = `interface ${interfaceName} `
+    const interfaceBase = `interface ${interfaceName} `;
+    let typeBody = JSON.stringify(typeObject).replaceAll("\"", "").replaceAll(",", ";");
+
+    return interfaceBase + typeBody;
 }
 
 const jsonToType = (typeName, json) => {
     return typeGen(typeName, typer(json));
 }
 
-console.log(jsonTyper('test', '{ "a": { "b": 1, "c": false } }'))
+const jsonToInterface = (interfaceName, json) => {
+    return interfaceGen(interfaceName, typer(json));
+}
+
+console.log(jsonToInterface('test', '{ "a": { "b": 1, "c": false } }'))
 
