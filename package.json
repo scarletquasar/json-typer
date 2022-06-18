@@ -1,11 +1,12 @@
 {
 
     "name": "json-typer",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Convert JSON strings to TypeScript types fastly",
     "type": "module",
     "author": "Victória Rose",
     "license": "MIT",
+    "main": "src/index.js",
     "bugs": {
       "url": "https://github.com/EternalQuasar0206/json-typer/issues"
     },

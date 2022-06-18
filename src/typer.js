@@ -1,4 +1,4 @@
-const typer = (json) => {
+ const typer = (json) => {
     const object = JSON.parse(json);
     const typesObject = {};
 
@@ -13,7 +13,7 @@ const typer = (json) => {
             return typer(JSON.stringify(object))
         }
 
-        return "any"
+        return "unknown"
     };
 
     Object.entries(object).forEach((item) => {
@@ -26,15 +26,4 @@ const typer = (json) => {
     return typesObject;
 }
 
-const typeGen = (typeName, typeObject) => {
-    const typeBase = `type ${typeName} = `;
-    let typeBody = JSON.stringify(typeObject).replaceAll("\"", "");
-
-    return typeBase + typeBody;
-}
-
-const jsonToType = (typeName, json) => {
-    return typeGen(typeName, typer(json));
-}
-
-export { jsonToType }
+export { typer }
