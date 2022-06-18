@@ -33,20 +33,8 @@ const typeGen = (typeName, typeObject) => {
     return typeBase + typeBody;
 }
 
-const interfaceGen = (interfaceName, typeObject) => {
-    const interfaceBase = `interface ${interfaceName} `;
-    let typeBody = JSON.stringify(typeObject).replaceAll("\"", "").replaceAll(",", ";");
-
-    return interfaceBase + typeBody;
-}
-
 const jsonToType = (typeName, json) => {
     return typeGen(typeName, typer(json));
 }
 
-const jsonToInterface = (interfaceName, json) => {
-    return interfaceGen(interfaceName, typer(json));
-}
-
-console.log(jsonToInterface('test', '{ "a": { "b": 1, "c": false } }'))
-
+export { jsonToType }
