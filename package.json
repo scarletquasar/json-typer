@@ -1,7 +1,7 @@
 {
 
     "name": "json-typer",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Convert JSON strings to TypeScript types fastly",
     "type": "module",
     "author": "Victória Rose",

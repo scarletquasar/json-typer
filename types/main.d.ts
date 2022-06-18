@@ -1,0 +1,1 @@
+declare const jsonToType: (typeName: string, json: string) => string
